@@ -1,6 +1,6 @@
 
 
-#SEPET AŞAMASINDA KULLANICILARA ÜRÜN ÖNERİSİNDE BULUNMAK(Association rule learning recommender)
+#SEPET AŞAMASINDA KULLANICILARA ÜRÜN ÖNERİSİNDE BULUNMAK(Association Rule Learning Recommender)
 
 
 
@@ -65,10 +65,10 @@ def create_invoice_product_df(dataframe, id=False):
             applymap(lambda x: 1 if x > 0 else 0)
 
 
-İnvoice_product_df = create_invoice_product_df(df)
+Invoice_product_df = create_invoice_product_df(df)
 
-İnvoice_product_df.head()
-İnvoice_product_df.head(30)
+Invoice_product_df.head()
+Invoice_product_df.head(30)
 
 frequent_itemsets = apriori(invoice_product_df, min_support=0.01, use_colnames=True)
 rules = association_rules(frequent_itemsets, metric="support", min_threshold=0.01)
